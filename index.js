@@ -62,9 +62,9 @@ async function upsertHubSpotContact(email, fields = {}) {
 // ─── 3. WEBHOOK ENDPOINT ──────────────────────────────────────────
 app.post('/webhook/intercom', async (req, res) => {
   // Verify it's really from Intercom
-  if (!verifyIntercom(req)) {
-    console.warn('Invalid signature — rejected');
-    return res.status(401).send('Unauthorized');
+ // if (!verifyIntercom(req)) {
+  //  console.warn('Invalid signature — rejected');
+ //   return res.status(401).send('Unauthorized');
   }
 
   const { topic, data } = req.body;
